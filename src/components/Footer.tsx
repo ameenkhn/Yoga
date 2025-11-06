@@ -76,7 +76,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center">
           <p className="text-muted-foreground">
-            © 2025 Tranquil Flow Yoga. All Rights Reserved. Designed with ❤️ for mindful living.
+            © 2025 Tranquil Flow Yoga. All Rights Reserved. Designed by Ameen Khan.
           </p>
         </div>
       </div>
