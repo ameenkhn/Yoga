@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 160 30% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 20%;
+
+    --primary: 140 35% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 25% 85%;
+    --secondary-foreground: 160 30% 20%;
+
+    --muted: 40 40% 92%;
+    --muted-foreground: 160 15% 45%;
+
+    --accent: 350 50% 90%;
+    --accent-foreground: 160 30% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 30% 88%;
+    --input: 40 30% 88%;
+    --ring: 140 35% 55%;
+
+    --radius: 1rem;
+
+    /* Custom Yoga Brand Tokens */
+    --sage: 140 30% 65%;
+    --sage-light: 140 35% 85%;
+    --sage-dark: 140 40% 45%;
+    --beige: 40 25% 85%;
+    --blush: 350 50% 90%;
+    --sand: 40 40% 80%;
+    --zen-dark: 160 30% 20%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(140 35% 65% / 0.3), hsl(350 50% 90% / 0.4), hsl(40 40% 85% / 0.3));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9), hsl(140 35% 95% / 0.6));
+    --gradient-glow: linear-gradient(120deg, hsl(140 50% 75%), hsl(350 60% 85%));
+    
+    /* Glass effect */
+    --glass-bg: hsl(0 0% 100% / 0.7);
+    --glass-border: hsl(140 30% 80% / 0.3);
+    
+    /* Shadows */
+    --shadow-soft: 0 8px 32px hsl(140 30% 50% / 0.1);
+    --shadow-glow: 0 0 40px hsl(140 50% 70% / 0.3);
+    --shadow-float: 0 20px 60px hsl(140 30% 40% / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 160 30% 10%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Poppins',sans-serif] antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .gradient-text {
+    background: var(--gradient-glow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
